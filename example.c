@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
   printf("size    : %lu\n", vector_size(sv));
 
   vector_set(sv, 3, "three");
+  vector_set(sv, 4, "four");
 
   printf("pointer : %p\n", (void *)sv);
   printf("capacity: %lu\n", vector_capacity(sv));
@@ -74,6 +75,9 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  printf("random access: %s\n", vector_get(sv, 3));
+  printf("random access: %s\n", vector_get(sv, 4));
+  printf("random access: %s\n", vector_get(sv, 5));
   vector_free(sv);
 
   return 0;
